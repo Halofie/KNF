@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+    <title>Kovai Natural Farmers</title>
+</head>
+<body class="paleGreen">
+    <!-- this is the offcanvas-->
+    <div class="offcanvas offcanvas-start sidebar " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">MENU</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="col d-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div>
+                <a class="btn" href="#">HOME</a>
+                <a class="btn" href="#">ABOUT</a>
+                <a class="btn" href="#">INVENTORY</a>
+            </div>
+        </div>
+    </div>
+      
+    <!-- the top bar-->
+    <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+        <div class="col-1 d-flex justify-content-center ">
+            <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="three-bars.svg">
+            </button>
+        </div>
+        <div class="col-2 d-none d-lg-flex justify-content-center">
+            <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+        </div>
+        <div class="col-6 color-paleGreen" >
+            <h1>WELCOME ADMIN,</h1>
+            <h2>SANGGIT SAARAN</h2>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+            <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center">
+        <div class="col-7 text-center">
+            <a class="btn m-3 btn-primary" href="#one">Unit of Measure Master</a>
+            <a class="btn m-3 btn-primary" href="#two">Category Master</a>
+            <a class="btn m-3 btn-primary" href="#three">Product Master</a>
+            <a class="btn m-3 btn-primary" href="#four">Route Master</a>
+            <a class="btn m-3 btn-primary" href="#five">Customer Registration</a>
+            <a class="btn m-3 btn-primary" href="#six">Supplier Registration</a>
+        </div>
+    </div>
+
+    <!-- page 1 -->
+    <div class="page" id="one">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+            <div class="col-1 d-flex justify-content-center ">
+                <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="three-bars.svg">
+                </button>
+            </div>
+            <div class="col-2 d-none d-lg-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div class="col-6 color-paleGreen" >
+                <h1>WELCOME ADMIN,</h1>
+                <h2>SANGGIT SAARAN</h2>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+            </div>
+        </div>
+        <a class="btn btn-dark text-center m-5" href="#">Back</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form class="form-control White " id="uomForm">
+                    <label for="UoM">UoM Name</label>
+                    <input type="text" class="form-control" name="UoM" id="UoM" required>
+                    
+                    <label for="UoMID" >UoM ID</label>
+                    <input type="text" class="form-control" name="UoMID" id="UoMID" required>
+
+                    <input type="submit" class="btn-success m-3 submit-uom btn" value="submit-uom">
+                </form>
+            </div>
+        </div>
+        <div id="result-uom" class="m-3"></div>
+        <div class="uomHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">UoM-id</th>
+                            <th scope="col">UoM</th>
+                        </tr>
+                    </thead>
+                    <tbody class="uom-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- page 2 -->
+    <div class="page" id="two">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+            <div class="col-1 d-flex justify-content-center ">
+                <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="three-bars.svg">
+                </button>
+            </div>
+            <div class="col-2 d-none d-lg-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div class="col-6 color-paleGreen" >
+                <h1>WELCOME ADMIN,</h1>
+                <h2>SANGGIT SAARAN</h2>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+            </div>
+        </div>
+        <a class="btn btn-dark  text-center m-5" href="#">Back</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form class="form-control White " id="categoryForm">
+                    <label for="categoryDesc">Category Name</label>
+                    <input type="text" class="form-control" name="categoryDesc" id="categoryDesc" required>
+                    
+                    <label for="categoryType" >category ID</label>
+                    <input type="text" class="form-control" name="categoryType" id="categoryType" required>
+        
+                    <input type="submit" class="btn-success m-3 submit-category btn" value="submit-category">
+                </form>
+            </div>
+        </div>
+        <div id="result-category" class="m-3"></div>
+        <div class="categoryHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">category-type</th>
+                            <th scope="col">category-Desc</th>
+                        </tr>
+                    </thead>
+                    <tbody class="category-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- page 3 -->
+    <div class="page" id="three">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+        <div class="col-1 d-flex justify-content-center ">
+            <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <img src="three-bars.svg">
+            </button>
+        </div>
+        <div class="col-2 d-none d-lg-flex justify-content-center">
+            <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+        </div>
+        <div class="col-6 color-paleGreen" >
+            <h1>WELCOME ADMIN,</h1>
+            <h2>VARUN KRISHNAN</h2>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+            <div class="m-0 d-block color-paleGreen justify-content-end">
+                date
+            </div>
+        </div>
+        </div>
+        
+        <a class="btn btn-dark  text-center m-5" href="#">Back</a>
+        <section class="d-flex justify-content-center">
+            <div class="addzone">
+                <form>
+                <div class="addbox w-auto m-3 d-flex col-6 p-0 container justify-content-between White ">
+                    <div class=" col text-center">
+                        <table class="table m-1 border ">
+                            <tbody>
+                            <tr>
+                                <th scope="row">PRODUCT:</th>
+                                <td><input type="text" class="form-control itmProduct" name="itmProduct" id="itmProduct"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Category</th>
+                                <td><select class="form-select itmCategory" name="itmCategory" id="floatingSelect itmCategory" aria-label="Floating label select example">
+                                    <!-- <option value="001">gram</option>
+                                    <option value="002">kattu</option>
+                                    <option value="003">kg</option>
+                                    <option value="004">nos</option> -->
+    
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">UoM</th>
+                                <td><select class="form-select itmUoM" name="itmUoM" id="floatingSelect itmUoM" aria-label="Floating label select example">
+                                    <!-- <option value="001">gram</option>
+                                    <option value="002">kattu</option>
+                                    <option value="003">kg</option>
+                                    <option value="004">nos</option> -->
+    
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">RATE</th>
+                                <td><input type="number" class="form-control itmRate" name="itmRate" id="itmRate" width="100" default></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-2 m-2 text-center ">
+                        <button type="button" class="ADDPRODUCT col  mt-2 btn btn-success">ADD</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="result-product" class="m-3"></div>
+
+        <div class="productHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">category-id</th>
+                        <th scope="col">product-Desc</th>
+                        <th scope="col">UoM-id</th>
+                        <th scope="col">rate/UoM</th>
+                      </tr>
+                    </thead>
+                    <tbody class="product-body">
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- page 4 -->
+    <div class="page" id="four">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+            <div class="col-1 d-flex justify-content-center ">
+                <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="three-bars.svg">
+                </button>
+            </div>
+            <div class="col-2 d-none d-lg-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div class="col-6 color-paleGreen" >
+                <h1>WELCOME ADMIN,</h1>
+                <h2>SANGGIT SAARAN</h2>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+            </div>
+        </div>
+        <a class="btn btn-dark text-center m-5" href="#">Back</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form class="form-control White " id="routeForm">
+                    <label for="route">Route</label>
+                    <input type="text" class="form-control" name="route" id="route" required>
+                    
+                    <label for="deliveryType">Delivery Type :</label>
+                    <div>
+                        <input type="radio"  name="Delivery" id="vanDelivery" value="Van Delivery" required>
+                        <label for="vanDelivery">Van Delivery</label>
+                    </div>
+                    <div>
+                        <input type="radio"  name="Delivery" id="personnelDelivery" value="Personnel Delivery" required>
+                        <label for="personnelDelivery">Personnel Delivery</label>
+                    </div>
+
+                    <input type="submit" class="btn-success m-3 submit-route btn" value="submit-route">
+                </form>
+            </div>
+        </div>
+        <div id="result-route" class="m-3"></div>
+        <div class="routeHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">Route</th>
+                            <th scope="col">Delivery Type</th>
+                        </tr>
+                    </thead>
+                    <tbody class="route-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- page 5 -->
+    <div class="page" id="five">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+            <div class="col-1 d-flex justify-content-center ">
+                <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="three-bars.svg">
+                </button>
+            </div>
+            <div class="col-2 d-none d-lg-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div class="col-6 color-paleGreen" >
+                <h1>WELCOME ADMIN,</h1>
+                <h2>SANGGIT SAARAN</h2>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+            </div>
+        </div>
+        <a class="btn btn-dark text-center m-5" href="#">Back</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form class="form-control White " id="customerForm">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" class="form-control" name="customerName" id="customerName" required>
+                    
+                    <label scope="row" for="routeID">Route ID</label>
+                    <select class="form-select routeID" name="routeID" id="floatingSelect routeID" required>
+                        <!-- <option value="">Select Route</option>
+                        <option value="route1">Route 1</option>
+                        <option value="route2">Route 2</option>
+                        <option value="route3">Route 3</option>
+                        <option value="route4">Route 4</option>
+                        <option value="route5">Route 5</option>
+                        <option value="route6">Route 6</option> -->
+                    </select>
+
+                    <label for="contact">Contact No</label>
+                    <input type="text" class="form-control" name="contact" id="contact" required>
+
+                    <label for="alternativeContact">Alternative Contact No</label>
+                    <input type="text" class="form-control" name="alternativeContact" id="alternativeContact">
+
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" required>
+
+                    <label for="emailID">Email ID</label>
+                    <input type="email" class="form-control" name="emailID" id="emailID">
+
+                    <input type="submit" class="btn-success m-3 submit-customer btn" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="result-customer" class="m-3"></div>
+        <div class="customerHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Route ID</th>
+                            <th scope="col">Contact No</th>
+                            <th scope="col">Alternative Contact No</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Email ID</th>
+                        </tr>
+                    </thead>
+                    <tbody class="customer-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- page 6 -->
+    <div class="page" id="six">
+        <div class=" h-auto p-2 d-flex justify-content-between row darkGreen d-fixed">
+            <div class="col-1 d-flex justify-content-center ">
+                <button class="btn d-block p-0 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="three-bars.svg">
+                </button>
+            </div>
+            <div class="col-2 d-none d-lg-flex justify-content-center">
+                <img src="pic.jpeg" class=" profile rounded-circle border p-0 border-dark" alt="logo">
+            </div>
+            <div class="col-6 color-paleGreen" >
+                <h1>WELCOME ADMIN,</h1>
+                <h2>SANGGIT SAARAN</h2>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+                <div class="m-0 d-block color-paleGreen justify-content-end">date</div>
+            </div>
+        </div>
+        <a class="btn btn-dark text-center m-5" href="#">Back</a>
+        <div class="d-flex justify-content-center">
+            <div class="col-6">
+                <form class="form-control White " id="supplierForm">
+                    <label for="supplierName">Farmer Name</label>
+                    <input type="text" class="form-control" name="supplierName" id="supplierName" required>
+                    
+                    <label for="farmLocation">Farm Location</label>
+                    <input type="text" class="form-control" name="farmLocation" id="farmLocation" required>
+
+                    <label for="contact">Contact No</label>
+                    <input type="text" class="form-control" name="contact" id="contact" required>
+
+                    <label for="alternativeContact">Alternative Contact No</label>
+                    <input type="text" class="form-control" name="alternativeContact" id="alternativeContact">
+
+                    <label for="farmSize">Farm Size (In Acres)</label>
+                    <input type="text" class="form-control" name="farmSize" id="farmSize" required>
+
+                    <label for="emailID">Email ID</label>
+                    <input type="email" class="form-control" name="emailID" id="emailID">
+
+                    <input type="submit" class="btn-success m-3 submit-supplier btn" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="result-supplier" class="m-3"></div>
+        <div class="supplierHolder m-3 p-2 White w-auto h-auto d-flex align-center justify-content-center">
+            <div class="d-flex justify-content-center container align-center ">
+                <table class="table table-success table-striped border">
+                    <thead>
+                        <tr>
+                            <th scope="col">Farmer Name</th>
+                            <th scope="col">Farm Location</th>
+                            <th scope="col">Contact No</th>
+                            <th scope="col">Alternative Contact No</th>
+                            <th scope="col">Farm Size</th>
+                            <th scope="col">Email ID</th>
+                        </tr>
+                    </thead>
+                    <tbody class="supplier-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    <script src="admin.js"></script>
+</body>
+</html>
+
+<!-- producers choose only product
+ add additional category
+ add poultry category-->
+
+
+ <!-- ADMIN PANEL-->
